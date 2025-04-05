@@ -1,20 +1,33 @@
 {
-  "name": "poseidon",
-  "version": "1.0.0",
-  "description": "",
+  "name": "poseidon-h",
+  "version": "0.0.1",
+  "description": "Poseidon hash with alt_bn128 implementation in Typescript",
   "main": "index.js",
   "scripts": {
+    "compile": "circom circuit/poseidon.circom --r1cs --wasm",
+    "ptau": "mkdir setup_params && snarkjs powersoftau new bn128 10 setup_params/pot10_0000.ptau -v && snarkjs powersoftau contribute setup_params/pot10_0000.ptau setup_params/pot10_0001.ptau -v && snarkjs powersoftau prepare phase2 setup_params/pot10_0001.ptau setup_params/pot10_final.ptau -v",
+    "setup": "snarkjs groth16 setup poseidon.r1cs setup_params/pot10_final.ptau setup_params/poseidon_0000.zkey && snarkjs zkey contribute setup_params/poseidon_0000.zkey setup_params/poseidon_0001.zkey -v && snarkjs zkey export verificationkey setup_params/poseidon_0001.zkey setup_params/verification_key.json",
+    "witness": "node poseidon_js/generate_witness.js poseidon_js/poseidon.wasm circuit/input.json poseidon_js/witness.json",
+    "prove": "snarkjs groth16 prove setup_params/poseidon_0001.zkey poseidon_js/witness.json poseidon_js/proof.json poseidon_js/public.json",
+    "verify": "snarkjs groth16 verify setup_params/verification_key.json poseidon_js/public.json poseidon_js/proof.json",
+    "groth16": "yarn compile && yarn ptau && yarn setup && yarn witness && yarn prove && yarn verify",
     "fmt": "prettier --write .",
-    "test": "jest"
+    "test": "jest --detectOpenHandles --forceExit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/circomlibjs": "^0.1.6",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.14.0",
+    "@types/snarkjs": "^0.7.9",
+    "circom_tester": "^0.0.21",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
     "jest": "^29.7.0",
     "prettier": "^3.5.3",
+    "snarkjs": "^0.7.5",
     "ts-jest": "^29.3.1",
     "typescript": "^5.8.3"
   }
