@@ -1,5 +1,4 @@
 node_modules
 setup_params
-*.r1cs
 dist
 proof_params

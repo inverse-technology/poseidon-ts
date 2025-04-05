@@ -19,9 +19,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Library Build
         run: yarn && yarn build
-        env:
-          CI: true
       - name: Library Test
         run: yarn preprocess && yarn ptau && yarn setup && yarn test
-        env:
-          CI: true
