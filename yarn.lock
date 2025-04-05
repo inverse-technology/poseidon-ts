@@ -2730,6 +2730,11 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+poseidon-h@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/poseidon-h/-/poseidon-h-0.0.2.tgz#7479607970005142519fd9fed8b50eba11e17cc1"
+  integrity sha512-NcwtUfkcDobnIr4d4yh2zlPTsNbyWvRwrgOEUFaHmdjFo4ywTwC5V06MPfpMYea1utj1HD6cfSo0mhThbm1wFQ==
+
 possible-typed-array-names@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/possible-typed-array-names/-/possible-typed-array-names-1.1.0.tgz#93e3582bc0e5426586d9d07b79ee40fc841de4ae"

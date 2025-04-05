@@ -1,6 +1,8 @@
-# Poseidon Hash with Typescript
+# Poseidon Hash with Typescript ![npm version](https://badge.fury.io/js/poseidon-h.svg) [![CI Check](https://github.com/inverse-technology/poseidon-ts/actions/workflows/index.yml/badge.svg)](https://github.com/inverse-technology/poseidon-ts/actions/workflows/index.yml)
 
 A [poseidon hash](https://eprint.iacr.org/2019/458.pdf) implementation over BN254 and Circom circuit test.
+
+**Use at your own risk**.
 
 ## Install
 

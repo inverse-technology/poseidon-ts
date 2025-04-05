@@ -1,10 +1,10 @@
 import path from "path";
-const wasm = require("circom_tester").wasm;
 import { buildPoseidon } from "circomlibjs";
 import { groth16 } from "snarkjs";
 import { poseidon } from "../src";
+const wasm = require("circom_tester").wasm;
 
-describe("poseidon", () => {
+describe("poseidon library tests", () => {
   const inputs = [1n, 2n];
 
   it("should work with circomlibjs", async () => {
