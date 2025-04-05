@@ -22,6 +22,6 @@ jobs:
         env:
           CI: true
       - name: Library Test
-        run: yarn test
+        run: yarn && yarn compile && yarn ptau && yarn setup && yarn test
         env:
           CI: true
