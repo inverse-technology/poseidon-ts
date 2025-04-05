@@ -1,4 +1,6 @@
-const F = 8;
+export const F = 8;
+
+export const HALF_F = F / 2;
 
 export const constants = {
   2: {
