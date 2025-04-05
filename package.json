@@ -15,7 +15,7 @@
     "test": "jest --detectOpenHandles --forceExit"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ash Whitehat",
   "license": "ISC",
   "devDependencies": {
     "@types/circomlibjs": "^0.1.6",
