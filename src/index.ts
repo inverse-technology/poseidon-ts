@@ -10,8 +10,7 @@ export const poseidon = (inputs: bigint[]): bigint => {
   for (let i = 0; i < F + p; i++) {
     for (let j = 0; j < t; j++) {
       state[j] += c[i * t + j];
-      if (i < HALF_F || i >= HALF_F + p) state[j] = pow5(state[j]);
-      else if (j === 0) state[j] = pow5(state[j]);
+      if (j === 0 || i < HALF_F || i >= HALF_F + p) state[j] = pow5(state[j]);
     }
     state = mix(state, m);
   }
