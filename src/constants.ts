@@ -2,41 +2,43 @@ export const F = 8;
 
 export const HALF_F = F / 2;
 
-export const constants = {
+export const constants: {
+  [key: number]: { p: number; m: bigint[][]; c: bigint[] };
+} = {
   2: {
     p: 57,
     m: [
       [
         BigInt(
-          "109b7f411ba0e4c9b2b70caf5c36a7b194be7c11ad24378bfedb68592ba8118b",
+          "0x109b7f411ba0e4c9b2b70caf5c36a7b194be7c11ad24378bfedb68592ba8118b",
         ),
         BigInt(
-          "16ed41e13bb9c0c66ae119424fddbcbc9314dc9fdbdeea55d6c64543dc4903e0",
+          "0x16ed41e13bb9c0c66ae119424fddbcbc9314dc9fdbdeea55d6c64543dc4903e0",
         ),
         BigInt(
-          "2b90bba00fca0589f617e7dcbfe82e0df706ab640ceb247b791a93b74e36736d",
-        ),
-      ],
-      [
-        BigInt(
-          "2969f27eed31a480b9c36c764379dbca2cc8fdd1415c3dded62940bcde0bd771",
-        ),
-        BigInt(
-          "2e2419f9ec02ec394c9871c832963dc1b89d743c8c7b964029b2311687b1fe23",
-        ),
-        BigInt(
-          "101071f0032379b697315876690f053d148d4e109f5fb065c8aacc55a0f89bfa",
+          "0x2b90bba00fca0589f617e7dcbfe82e0df706ab640ceb247b791a93b74e36736d",
         ),
       ],
       [
         BigInt(
-          "143021ec686a3f330d5f9e654638065ce6cd79e28c5b3753326244ee65a1b1a7",
+          "0x2969f27eed31a480b9c36c764379dbca2cc8fdd1415c3dded62940bcde0bd771",
         ),
         BigInt(
-          "176cc029695ad02582a70eff08a6fd99d057e12e58e7d7b6b16cdfabc8ee2911",
+          "0x2e2419f9ec02ec394c9871c832963dc1b89d743c8c7b964029b2311687b1fe23",
         ),
         BigInt(
-          "19a3fc0a56702bf417ba7fee3802593fa644470307043f7773279cd71d25d5e0",
+          "0x101071f0032379b697315876690f053d148d4e109f5fb065c8aacc55a0f89bfa",
+        ),
+      ],
+      [
+        BigInt(
+          "0x143021ec686a3f330d5f9e654638065ce6cd79e28c5b3753326244ee65a1b1a7",
+        ),
+        BigInt(
+          "0x176cc029695ad02582a70eff08a6fd99d057e12e58e7d7b6b16cdfabc8ee2911",
+        ),
+        BigInt(
+          "0x19a3fc0a56702bf417ba7fee3802593fa644470307043f7773279cd71d25d5e0",
         ),
       ],
     ],
