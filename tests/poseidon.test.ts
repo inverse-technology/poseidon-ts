@@ -1,11 +1,18 @@
 import path from "path";
 import { buildPoseidon } from "circomlibjs";
 import { groth16 } from "snarkjs";
-import { poseidon } from "../src";
+import { poseidon, randomFieldElement, P } from "../src";
 const wasm = require("circom_tester").wasm;
 
 describe("poseidon library tests", () => {
   const inputs = [1n, 2n];
+
+  it("should generate random field element", () => {
+    const random = randomFieldElement();
+    expect(random).toBeDefined();
+    expect(random).toBeGreaterThan(0n);
+    expect(random).toBeLessThan(P);
+  });
 
   it("should work with circomlibjs", async () => {
     const circomPoseidon = await buildPoseidon();

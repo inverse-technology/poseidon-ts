@@ -1,5 +1,6 @@
 import { F, HALF_F, constants } from "./constants";
 import { pow5, mix } from "./utils";
+export { randomFieldElement, P } from "./ff";
 
 export const poseidon = (inputs: bigint[]): bigint => {
   const { length } = inputs;
