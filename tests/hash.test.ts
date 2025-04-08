@@ -6,6 +6,9 @@ describe("poseidon library tests", () => {
   const variableInputs = Array.from({ length: 10 }, () => [
     [randomFieldElement(), randomFieldElement()],
   ]);
+  const generateVariableLengthInputs = (length: number) => {
+    return Array.from({ length }, () => randomFieldElement());
+  };
 
   it("should work with constant inputs", async () => {
     const circomPoseidon = await buildPoseidon();
@@ -27,4 +30,24 @@ describe("poseidon library tests", () => {
       expect(F.toObject(hash)).toBe(hash2);
     },
   );
+
+  it("should work with variable length inputs", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(1);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(2);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
 });

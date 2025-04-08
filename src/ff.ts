@@ -12,3 +12,9 @@ export const randomFieldElement = (): bigint => {
     lastUpperBits,
   );
 };
+
+export const isOverflow = (element: bigint): void => {
+  if (element >= P) {
+    throw new Error("Field element is greater than the field modulus");
+  }
+};
