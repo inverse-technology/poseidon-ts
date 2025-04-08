@@ -16,9 +16,22 @@ $ npm i poseidon-h
 ## Usage
 
 ```ts
-import { poseidon } from "poseidon-h";
+import { poseidon, randomFieldElement } from "poseidon-h";
+const wasm = require("circom_tester").wasm;
 
 const hash = poseidon([1n, 2n]);
+const hash2 = poseidon([randomFieldElement(), randomFieldElement()]);
+const circuit = await wasm(path.join("circuit", "poseidon.circom"));
+const witness = await circuit.calculateWitness({ inputs });
+const hash = poseidon(inputs);
+
+await circuit.assertOut(witness, { out: hash });
+```
+
+## Test
+
+```shell
+$ yarn test
 ```
 
 ## Groth16
