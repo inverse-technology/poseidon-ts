@@ -2,3 +2,5 @@ node_modules
 setup_params
 dist
 proof_params
+poseidon_js
+*.r1cs
