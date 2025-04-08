@@ -6,15 +6,22 @@ const wasm = require("circom_tester").wasm;
 
 describe("poseidon library tests", () => {
   const inputs = [1n, 2n];
+  const variableInputs = Array.from({ length: 10 }, () => [
+    [randomFieldElement(), randomFieldElement()],
+  ]);
 
-  it("should generate random field element", () => {
-    const random = randomFieldElement();
-    expect(random).toBeDefined();
-    expect(random).toBeGreaterThan(0n);
-    expect(random).toBeLessThan(P);
-  });
+  test.each(variableInputs)(
+    "should generate random field element %s",
+    async (inputs) => {
+      const random = inputs[0];
 
-  it("should work with circomlibjs", async () => {
+      expect(random).toBeDefined();
+      expect(random).toBeGreaterThan(0n);
+      expect(random).toBeLessThan(P);
+    },
+  );
+
+  it("should work with constant inputs", async () => {
     const circomPoseidon = await buildPoseidon();
     const { F } = circomPoseidon;
     const hash = circomPoseidon(inputs);
@@ -22,6 +29,18 @@ describe("poseidon library tests", () => {
 
     expect(F.toObject(hash)).toBe(hash2);
   });
+
+  test.each(variableInputs)(
+    "should work with variable inputs %s",
+    async (inputs) => {
+      const circomPoseidon = await buildPoseidon();
+      const { F } = circomPoseidon;
+      const hash = circomPoseidon(inputs);
+      const hash2 = poseidon(inputs);
+
+      expect(F.toObject(hash)).toBe(hash2);
+    },
+  );
 
   it("should work with circuit", async () => {
     const circuit = await wasm(path.join("circuit", "poseidon.circom"));

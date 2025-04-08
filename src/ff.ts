@@ -6,10 +6,9 @@ export const P = BigInt(
 export const randomFieldElement = (): bigint => {
   const lastBit = 0x30644e72;
   const bit32Max = 0xffffffff;
-  let random = BigInt(Math.floor(Math.random() * lastBit));
-  for (let i = 0; i < 7; i++) {
-    random = random >> 8n;
-    random += BigInt(Math.floor(Math.random() * bit32Max));
-  }
-  return BigInt(random);
+  const lastUpperBits = BigInt(Math.floor(Math.random() * lastBit));
+  return [...Array(7)].reduce(
+    (acc, _) => (acc << 32n) | BigInt(Math.floor(Math.random() * bit32Max)),
+    lastUpperBits,
+  );
 };
