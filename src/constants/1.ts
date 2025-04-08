@@ -1,14 +1,16 @@
-export const constant1 = {
+import { RowConstant } from "./utils";
+
+export const constant1: RowConstant = {
   p: 56,
   m: [
     [
       "0x66f6f85d6f68a85ec10345351a23a3aaf07f38af8c952a7bceca70bd2af7ad5",
       "0x2b9d4b4110c9ae997782e1509b1d0fdb20a7c02bbd8bea7305462b9f8125b1e8",
-    ].map((x) => BigInt(x)),
+    ],
     [
       "0xcc57cdbb08507d62bf67a4493cc262fb6c09d557013fff1f573f431221f8ff9",
       "0x1274e649a32ed355a31a6ed69724e1adade857e86eb5c3a121bcd147943203c8",
-    ].map((x) => BigInt(x)),
+    ],
   ],
   c: [
     "0x9c46e9ec68e9bd4fe1faaba294cba38a71aa177534cdd1b6c7dc0dbd0abd7a7",
@@ -139,5 +141,5 @@ export const constant1 = {
     "0x7620a6dfb0b6cec3016adf3d3533c24024b95347856b79719bc0ba743a62c2c",
     "0x1574c7ef0c43545f36a8ca08bdbdd8b075d2959e2f322b731675de3e1982b4d0",
     "0x269e4b5b7a2eb21afd567970a717ceec5bd4184571c254fdc06e03a7ff8378f0",
-  ].map((x) => BigInt(x)),
+  ],
 };

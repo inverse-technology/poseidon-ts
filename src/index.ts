@@ -1,5 +1,5 @@
 import { F, HALF_F, constants } from "./constants";
-import { pow5, mix } from "./utils";
+import { pow5, mix } from "./operation";
 import { validateInputs } from "./validation";
 export { randomFieldElement, P } from "./ff";
 
