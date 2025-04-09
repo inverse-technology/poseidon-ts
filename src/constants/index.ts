@@ -8,6 +8,12 @@ import { constant7 } from "./7";
 import { constant8 } from "./8";
 import { constant9 } from "./9";
 import { constant10 } from "./10";
+import { constant11 } from "./11";
+import { constant12 } from "./12";
+import { constant13 } from "./13";
+import { constant14 } from "./14";
+import { constant15 } from "./15";
+import { constant16 } from "./16";
 import { loadConstant } from "./utils";
 
 export const F = 8;
@@ -32,4 +38,10 @@ export const constants: {
   8: loadConstant(constant8),
   9: loadConstant(constant9),
   10: loadConstant(constant10),
+  11: loadConstant(constant11),
+  12: loadConstant(constant12),
+  13: loadConstant(constant13),
+  14: loadConstant(constant14),
+  15: loadConstant(constant15),
+  16: loadConstant(constant16),
 };

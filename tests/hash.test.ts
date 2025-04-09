@@ -120,4 +120,64 @@ describe("poseidon library tests", () => {
 
     expect(F.toObject(hash)).toBe(hash2);
   });
+
+  it("should work with variable length inputs 10", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(10);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 11", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(11);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 12", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(12);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 13", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(13);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 14", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(14);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 15", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(15);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
 });
