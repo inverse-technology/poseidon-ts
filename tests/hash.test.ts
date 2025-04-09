@@ -31,7 +31,7 @@ describe("poseidon library tests", () => {
     },
   );
 
-  it("should work with variable length inputs", async () => {
+  it("should work with variable length inputs 1", async () => {
     const circomPoseidon = await buildPoseidon();
     const { F } = circomPoseidon;
     const inputs = generateVariableLengthInputs(1);
@@ -41,10 +41,80 @@ describe("poseidon library tests", () => {
     expect(F.toObject(hash)).toBe(hash2);
   });
 
-  it("should work with variable length inputs", async () => {
+  it("should work with variable length inputs 2", async () => {
     const circomPoseidon = await buildPoseidon();
     const { F } = circomPoseidon;
     const inputs = generateVariableLengthInputs(2);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 3", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(3);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 4", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(4);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 5", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(5);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 6", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(6);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 7", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(7);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 8", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(8);
+    const hash = circomPoseidon(inputs);
+    const hash2 = poseidon(inputs);
+
+    expect(F.toObject(hash)).toBe(hash2);
+  });
+
+  it("should work with variable length inputs 9", async () => {
+    const circomPoseidon = await buildPoseidon();
+    const { F } = circomPoseidon;
+    const inputs = generateVariableLengthInputs(9);
     const hash = circomPoseidon(inputs);
     const hash2 = poseidon(inputs);
 
