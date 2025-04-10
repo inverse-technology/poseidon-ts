@@ -29,6 +29,7 @@
     "groth16": "yarn preprocess && yarn ptau && yarn setup && yarn witness && yarn prove && yarn verify",
     "lint": "eslint src tests",
     "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
     "compile": "circom circuit/poseidon.circom --r1cs --wasm",
     "build": "tsc",
     "prepare": "yarn build",

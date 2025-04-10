@@ -24,5 +24,7 @@ jobs:
           sudo chmod +x /usr/bin/circom
       - name: Library Build
         run: yarn && yarn build
+      - name: Library Code Format
+        run: yarn fmt:check && yarn lint
       - name: Library Test
         run: yarn compile && yarn preprocess && yarn ptau && yarn setup && yarn test
