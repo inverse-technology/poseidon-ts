@@ -1,6 +1,6 @@
 {
   "name": "poseidon-h",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Poseidon hash with alt_bn128 implementation in Typescript",
   "repository": {
     "type": "git",
